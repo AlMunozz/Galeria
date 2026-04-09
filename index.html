@@ -157,16 +157,6 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
-      <div class="hero-card">
-        <div class="eyebrow">Carpeta del proyecto</div>
-        <h1>La web toma todas las fotos desde <code>assets/fotos</code>.</h1>
-        <p>
-          Esta versión está pensada para que metas las imágenes dentro del propio proyecto y la galería las cargue automáticamente
-          leyendo un archivo <code>assets/fotos/fotos.json</code> generado a partir de esa carpeta.
-        </p>
-      </div>
-    </section>
 
     <section class="status-card" aria-labelledby="estadoTitulo">
       <h2 id="estadoTitulo">Estado</h2>
@@ -242,12 +232,11 @@
       const article = document.createElement('article');
       article.className = 'photo-card';
       article.innerHTML = `
-        <button class="photo-button" type="button" aria-label="Abrir imagen ${photo.title}">
+        <button class="photo-button" type="button" aria-label="Abrir imagen">
           <div class="photo-frame">
-            <img src="${photo.src}" alt="${photo.title}" loading="lazy" decoding="async" width="900" height="1125">
+            <img src="${photo.src}" alt="Foto ${String(index + 1)}" loading="lazy" decoding="async" width="900" height="1125">
           </div>
           <div class="photo-meta">
-            <p class="photo-title">${photo.title}</p>
             <span class="photo-index">${String(index + 1).padStart(2, '0')}</span>
           </div>
         </button>
